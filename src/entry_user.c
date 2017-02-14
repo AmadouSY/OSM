@@ -25,7 +25,7 @@ void entry_user_download_osm(SDL_Surface *window)
 	whiteColor.g =255;
 	whiteColor.b =255;
 
-	font = TTF_OpenFont("LongTime.ttf",10);
+	font = TTF_OpenFont("../fonts/LongTime.ttf",10);
 	position.x= CP_WIDTH_RENDER+10;
     position.y=320;
 
@@ -142,7 +142,7 @@ void entry_user_global_search(SDL_Surface *window)
 	whiteColor.g =255;
 	whiteColor.b =255;
 
-	font = TTF_OpenFont("LongTime.ttf",10);
+	font = TTF_OpenFont("../font/LongTime.ttf",10);
 	for(i = 0; i <6; i++)
 	{
 		position[i].x= CP_WIDTH_RENDER+10;

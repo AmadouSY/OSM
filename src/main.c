@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	* si 2 arguments on le prend en compte
 	*/
 	if(argc == 1)
-		s = "files/test3.osm";
+		s = "../files/test3.osm";
 	else
 	{
 		if (argc != 2)

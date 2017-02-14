@@ -194,7 +194,7 @@ void text_menu(SDL_Surface *window)
   whiteColor.g =255;
   whiteColor.b =255;
 
-  font_two = TTF_OpenFont("fonts/LongTime.ttf",10);
+  font_two = TTF_OpenFont("../fonts/LongTime.ttf",10);
 
   text_div_two = TTF_RenderText_Blended(font_two, "Zoom In : i / Zoom Out : o", whiteColor);
   text_div_three = TTF_RenderText_Blended(font_two, "Directional Keys to move", whiteColor);
@@ -259,8 +259,8 @@ void export(SDL_Surface *window)
 	SDL_Surface *export = NULL;
 	SDL_Rect p_screen;
 	time_t t = time(NULL);
-	char file_bmp[256] = "export_render/rendu-";
-	char file_png[256] = "export_render/rendu-";
+	char file_bmp[256] = "../export_render/rendu-";
+	char file_png[256] = "../export_render/rendu-";
 	char buffer[256];
 	char extension_bmp[5]=".bmp";
 	char extension_png[5]=".png";
