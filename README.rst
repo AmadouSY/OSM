@@ -38,11 +38,7 @@ Installer SDL et les paquets
 	sudo apt-get install libsdl1.2-dev
 .
 .. code-block::
-	sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev libsdl-ttf2.0-0 
-
-.
-.. code-block::
-	libsdl-ttf2.0-dev libsdl-mixer1.2libsdl-mixer1.2-dev libsdl-gfx1.2-dev libsdl1.2-dev
+	sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev libsdl-ttf2.0-0 libsdl-ttf2.0-dev libsdl-mixer1.2libsdl-mixer1.2-dev libsdl-gfx1.2-dev libsdl1.2-dev
 
 
 Contributions
