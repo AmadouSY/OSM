@@ -1,29 +1,46 @@
+========
+Open Street Map Reader
+========
+
+Genere des cartes a partir de fichier .osm ou de coordonnées.
+
+
+
 Utilisation 
+-------
 
-make clean : Nettoie les .o
-make : Lance la compilation
-./cproj : Lance un fichier par défaut
-./cproj fileOsm.osm : Lance un fichier osm
+Compilation
+.. code-block::
+	make
+Executer
+.. code-block::
+	./cproj : Lance un fichier par défaut
+.. code-block::
+	./cproj fileOsm.osm : Lance un fichier osm
+Supprimer les fichiers inutiles a l'execution
+.. code-block::
+	make clean
 
-[Installation de Libxml2]
-Vérifier que l'installation de python est effective.
-Taper : Python3 --version
-Si il demande l'installation alors Installer sinon passer à l'installation de libxml2
-sudo apt-get install libxml2-dev
-sudo apt-get install libxml2-utils
+.. image:: https://github.com/AmadouSY/Ghost/blob/master/img/gost.PNG
 
-[Installation de SDL]
-Taper : sudo apt-get install libsdl1.2-dev
+Installation
+-------
 
-Puis installer les paquets suivant 
-libsdl-image1.2,
-libsdl-image1.2-dev,
-libsdl-ttf2.0-0,
-libsdl-ttf2.0-dev,
-libsdl-mixer1.2,
-libsdl-mixer1.2-dev
-libsdl-gfx1.2-dev
+Installer libxml2
+.. code-block::
+	sudo apt-get install libxml2-dev
+.. code-block::
+	sudo apt-get install libxml2-utils
 
-A l'aide de la commande:
+Installer SDL et les paquets
+.. code-block::
+	sudo apt-get install libsdl1.2-dev
 
-sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev libsdl-ttf2.0-0 libsdl-ttf2.0-dev libsdl-mixer1.2 libsdl-mixer1.2-dev libsdl-gfx1.2-dev libsdl1.2-dev
+.. code-block::
+	sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev libsdl-ttf2.0-0 libsdl-ttf2.0-dev libsdl-mixer1.2 libsdl-mixer1.2-dev libsdl-gfx1.2-dev libsdl1.2-dev
+
+Contributions
+-------------
+
+v0.1.0
+~~~~~~
