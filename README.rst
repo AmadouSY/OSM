@@ -24,7 +24,7 @@ Supprimer les fichiers inutiles a l'execution
 .. code-block::
 	make clean
 
-.. image:: https://github.com/AmadouSY/OSM/export_render/rendu
+.. image:: https://github.com/AmadouSY/OSM/blob/master/export_render/rendu-13-03-2016-14_22_42.png
 
 Installation
 -------
