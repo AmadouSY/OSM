@@ -14,6 +14,7 @@ Compilation
 	make
 
 Executer
+
 .. code-block::
 	./cproj : Lance un fichier par défaut
 
@@ -21,6 +22,7 @@ Executer
 	./cproj fileOsm.osm : Lance un fichier osm
 
 Supprimer les fichiers inutiles a l'execution
+
 .. code-block::
 	make clean
 
@@ -28,6 +30,7 @@ Installation
 -------
 
 Installer libxml2
+
 .. code-block::
 	sudo apt-get install libxml2-dev
 
@@ -35,6 +38,7 @@ Installer libxml2
 	sudo apt-get install libxml2-utils
 
 Installer SDL et les paquets
+
 .. code-block::
 	sudo apt-get install libsdl1.2-dev
 
