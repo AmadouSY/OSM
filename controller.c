@@ -9,7 +9,7 @@
 
  /**
  	* \param window la surface sur laquelle on affichera le render
-	* \author Amadou SY et Fadyl Bello
+	* \author Amadou SY
 	* \brief parcours notre tableau de Way et les affiche un à un sur le render
 	* \todo séparer la fonction avec des sous-fonctions
 	* \bug la lecture des tag des noeuds ne marchent pas
@@ -113,7 +113,7 @@ void init_manager_way(SDL_Surface *window)
  /**
  	* \param key Numéro de clé d'un Tag
  	* \param value Valeur de la clé
-	* \author Amadou SY et Fadyl Bello & Amadou Sy
+	* \author Fadyl Bello & Amadou Sy
 	* \brief récupére le type d'un tag
 	* \date Mars 2016
 	* \version 1.0
@@ -200,7 +200,7 @@ int get_tag_type(char* key, char* value)
 
  /**
  	* \param window la surface sur laquelle on affichera le render
-	* \author Amadou SY et Fadyl Bello
+	* \author Fadyl Bello
 	* \brief On imprimera au niveau des Nodes les tags(restaurants, café, hotel...)
 	* \bug Impression des images
 	* \date 11 Mars 2016
@@ -249,7 +249,7 @@ void init_manager_node(SDL_Surface *window)
 
 /**
 	* \param window la surface sur laquelle on affichera le render
-	* \author Amadou SY et Fadyl Bello
+	* \author Fadyl Bello
 	* \brief On imprimera les relations inner par dessus le render original
 	* \todo initialiser les way contenant un inner avec un champs Inner à 1
 	* \date 11 Mars 2016

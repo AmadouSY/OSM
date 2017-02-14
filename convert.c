@@ -16,7 +16,7 @@
 	* \param tlon1 Longitude du point 1
 	* \param tlon2 Longitude du point 2
 	* \return La distance entre 2 points
-	* \author Amadou SY et Fadyl Bello
+	* \author Amadou SY
 	* \brief Nous donne la distance en kilomètre entre 2 points
 	* \date 17 avril 2016
 	* \version 1.0
@@ -39,7 +39,7 @@ double distance_calculation(double tlat1, double tlon1, double tlat2, double tlo
 /**
 	* \param deg Le degré a transformer en radian
 	* \return la valeur en degré
-	* \author Amadou SY et Fadyl Bello
+	* \author Amadou SY
 	* \brief Transforme un degré en radian
 	* \date 17 avril 2016
 	* \version 1.0
@@ -51,7 +51,7 @@ double deg2rad(double deg)
 
 /**
 	* \return la distance entre deux latitude de la map
-	* \author Amadou SY et Fadyl Bello
+	* \author Amadou SY
 	* \brief la distance entre deux latitude de la map
 	* \date 17 avril 2016
 	* \version 1.0
@@ -63,7 +63,7 @@ double distance_lat()
 
 /**
 	* \return la distance entre deux longitude de la map
-	* \author Amadou SY et Fadyl Bello
+	* \author Amadou SY
 	* \brief la distance entre deux longitude de la map
 	* \date 17 avril 2016
 	* \version 1.0
@@ -75,7 +75,7 @@ double distance_lon()
 
 /**
 	* \return la hauteur de la map
-	* \author Amadou SY et Fadyl Bello
+	* \author Amadou SY
 	* \brief la hauteur de la map
 	* \date 17 avril 2016
 	* \version 1.0

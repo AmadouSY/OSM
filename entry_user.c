@@ -6,7 +6,7 @@
 /**
  * \param window surface où écrire la valeur de retour
  * \brief Récupere les valeurs lat/lon de l'utilisateur
- * \author Fadyl Bello
+ * \author Amadou SY
  * \version 1.0
  * \date 23 Mars 2016
  */
@@ -20,31 +20,31 @@ void entry_user_download_osm(SDL_Surface *window)
 	SDL_Color whiteColor;
 	SDL_Surface *text_one,*text_instructions;
 	float minlat,maxlat,minlon,maxlon;
-	
+
 	whiteColor.r =255;
 	whiteColor.g =255;
 	whiteColor.b =255;
-	
+
 	font = TTF_OpenFont("LongTime.ttf",10);
 	position.x= CP_WIDTH_RENDER+10;
     position.y=320;
-    
+
     position_instructions.x= CP_WIDTH_RENDER+10;
     position_instructions.y=300;
-    
-     text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la latitude", whiteColor);           
+
+     text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la latitude", whiteColor);
      SDL_BlitSurface(text_instructions,NULL,window,&position_instructions);
      SDL_Flip(window);
 
     while (!end)
     {
         SDL_WaitEvent(&event);
-         
+
         if (event.type==SDL_KEYDOWN)
         {
-     
+
             letter=event.key.keysym.unicode;
-                 
+
             if ((letter>=SDLK_0 && letter<=SDLK_9) || letter == SDLK_PERIOD)
             {
  				if(instructions ==0)
@@ -59,14 +59,14 @@ void entry_user_download_osm(SDL_Surface *window)
                   lon[index+1]='\0';
                   text_one = TTF_RenderUTF8_Blended(font,lon, whiteColor);
                 }
-                
-                index++;/*on se prépare à recevoir la prochaine lettre*/  
+
+                index++;/*on se prépare à recevoir la prochaine lettre*/
                 SDL_BlitSurface(text_one,NULL,window,&position);
                 SDL_Flip(window);
             }
-             
+
             if (letter==SDLK_BACKSPACE && index>0)
-            {    
+            {
             	printf("effacer\n");
             	index--;
             	lat[index]='\0';
@@ -75,18 +75,18 @@ void entry_user_download_osm(SDL_Surface *window)
 				if(instructions == 0)
 				{
 					text_one = TTF_RenderUTF8_Blended(font,lat, whiteColor);
-					text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la latitude", whiteColor);      
+					text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la latitude", whiteColor);
 				}
 				else
 				{
 					text_one = TTF_RenderUTF8_Blended(font,lat, whiteColor);
-				    text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la longitude", whiteColor);   
+				    text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la longitude", whiteColor);
 				}
 				SDL_BlitSurface(text_one,NULL,window,&position);
 				SDL_BlitSurface(text_instructions,NULL,window,&position_instructions);
 				SDL_Flip(window);
-            	
-            } 
+
+            }
             if (letter==SDLK_RETURN)/*return*/
             {
             	if(instructions ==0)
@@ -94,7 +94,7 @@ void entry_user_download_osm(SDL_Surface *window)
             		 instructions = 1;
             		 background_menu(window);
   					 text_menu(window);
-            		 text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la longitude", whiteColor);           
+            		 text_instructions = TTF_RenderUTF8_Blended(font,"Taper le centre de la longitude", whiteColor);
 					 SDL_BlitSurface(text_instructions,NULL,window,&position_instructions);
 					 SDL_Flip(window);
 					 printf("lat : %s\n", lat);
@@ -104,7 +104,7 @@ void entry_user_download_osm(SDL_Surface *window)
            		{
            			background_menu(window);
 				    text_menu(window);
-        		    text_instructions = TTF_RenderUTF8_Blended(font,"Fichier Téléchargé!", whiteColor);           
+        		    text_instructions = TTF_RenderUTF8_Blended(font,"Fichier Téléchargé!", whiteColor);
 				    SDL_BlitSurface(text_instructions,NULL,window,&position_instructions);
 				    SDL_Flip(window);
            			printf("lat : %s && lon : %s\n", lat,lon);
@@ -124,7 +124,7 @@ void entry_user_download_osm(SDL_Surface *window)
 /**
  * \param window surface où écrire la valeur de retour
  * \brief Récupere les valeurs (6max) utilisateur de la recherche globale
- * \author Fadyl Bello
+ * \author Amadou SY
  * \version 1.0
  * \date 23 Mars 2016
  */
@@ -152,18 +152,18 @@ void entry_user_global_search(SDL_Surface *window)
 	position_instructions.x= CP_WIDTH_RENDER+10;
 	position_instructions.y=300;
 
-	text_instructions = TTF_RenderUTF8_Blended(font,"Taper votre lieu(Entrée pour terminé)", whiteColor);           
+	text_instructions = TTF_RenderUTF8_Blended(font,"Taper votre lieu(Entrée pour terminé)", whiteColor);
 	SDL_BlitSurface(text_instructions,NULL,window,&position_instructions);
 	SDL_Flip(window);
-	
+
 	while (!end)
     {
         SDL_WaitEvent(&event);
-         
+
         if (event.type==SDL_KEYDOWN)
         {
             letter=event.key.keysym.unicode;
-                 
+
             if ((letter>=SDLK_0 && letter<=SDLK_9) || (letter>=SDLK_a && letter<=SDLK_z))
             {
  			  /*On rempli l'instruction où on est*/
@@ -175,14 +175,14 @@ void entry_user_global_search(SDL_Surface *window)
               {
               	text[i] = TTF_RenderUTF8_Blended(font,elem[i], whiteColor);
               	SDL_BlitSurface(text[i],NULL,window,&position[i]);
-           	  }	
-           	  
+           	  }
+
               SDL_Flip(window);
             }
-             
+
             if (letter==SDLK_BACKSPACE && index>0)/*corerction si on se trompe*/
-            {    
-            	
+            {
+
             	index--;
             	elem[instructions][index]='\0';
             	background_menu(window);
@@ -192,15 +192,15 @@ void entry_user_global_search(SDL_Surface *window)
 		          {
 		          	text[i] = TTF_RenderUTF8_Blended(font,elem[i], whiteColor);
 		          	SDL_BlitSurface(text[i],NULL,window,&position[i]);
-		       	  }	
-				
+		       	  }
+
 				SDL_BlitSurface(text_instructions,NULL,window,&position_instructions);
 				SDL_Flip(window);
-            	
-            } 
+
+            }
             if (letter==SDLK_SPACE)
             {
-            	
+
             	if(instructions <= 5)
             	{
             		instructions++;
@@ -213,14 +213,14 @@ void entry_user_global_search(SDL_Surface *window)
             }
             if (letter==SDLK_RETURN)
             {
-            	
+
            			background_menu(window);
 				    text_menu(window);
 				    get_datasearch_request(elem[0],elem[1],elem[2],elem[3],elem[4],elem[5],window,font,position_instructions);
-        		   
+
                 	end=1;
             }
-        } 
+        }
     }
 
 }
@@ -229,7 +229,7 @@ void entry_user_global_search(SDL_Surface *window)
  * \param window surface où écrire la valeur de retour
  * \brief Récupere les valeurs lat/lon de la recherche globale
  * \todo la fonction
- * \author Fadyl Bello
+ * \author Amadou SY
  * \version 1.0
  * \date 23 Mars 2016
  */

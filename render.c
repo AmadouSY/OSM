@@ -45,7 +45,7 @@ void sdl_main(){
   is_running(window);
 
 
-  SDL_FreeSurface(window); 
+  SDL_FreeSurface(window);
   TTF_Quit();
   SDL_Quit();
 
@@ -109,7 +109,7 @@ void restart_window(SDL_Surface *window){
 void is_running(SDL_Surface *window){
   int onBreak = 1; /* Booléen permettant de savoir si on est en pause.*/
   SDL_Event event; /* Permet la gestion des évenements.*/
- 
+
   while(onBreak == 1){/* Tant qu'on est en pause*/
 
     SDL_WaitEvent(&event);/* On attendent un évenement*/
@@ -172,7 +172,7 @@ void background_menu(SDL_Surface *window){
     position.x = CP_WIDTH_RENDER;
     position.y=i*4;
     SDL_FillRect(lines[i], NULL, SDL_MapRGB(window->format, i, i, i));
-    SDL_BlitSurface(lines[i], NULL, window, &position); 
+    SDL_BlitSurface(lines[i], NULL, window, &position);
   }
 }
 
@@ -189,20 +189,20 @@ void text_menu(SDL_Surface *window)
   SDL_Color whiteColor;
   SDL_Surface *text_div_two, *text_div_three, *text_div_four, *text_div_five, *text_div_six, *text_div_seven;
   int space_between_div = 5;
-  
+
   whiteColor.r =255;
   whiteColor.g =255;
   whiteColor.b =255;
 
-  font_two = TTF_OpenFont("LongTime.ttf",10);
-  
+  font_two = TTF_OpenFont("fonts/LongTime.ttf",10);
+
   text_div_two = TTF_RenderText_Blended(font_two, "Zoom In : i / Zoom Out : o", whiteColor);
   text_div_three = TTF_RenderText_Blended(font_two, "Directional Keys to move", whiteColor);
   text_div_four = TTF_RenderText_Blended(font_two, "Export : e", whiteColor);
   text_div_five = TTF_RenderText_Blended(font_two, "Download OSM : t", whiteColor);
   text_div_six = TTF_RenderText_Blended(font_two, "Global search : g", whiteColor);
   text_div_seven = TTF_RenderText_Blended(font_two, "Local search : l", whiteColor);
-  
+
   position.x = (CP_WIDTH_RENDER+(CP_WIDTH_MENU/2)) - (text_div_two->w /2);
   position.y = space_between_div;
   SDL_BlitSurface(text_div_two,NULL,window,&position);
@@ -214,18 +214,18 @@ void text_menu(SDL_Surface *window)
   position.x = (CP_WIDTH_RENDER+(CP_WIDTH_MENU/2)) - (text_div_four->w /2);
   position.y = space_between_div*3 + text_div_two->h + text_div_three->h ;
   SDL_BlitSurface(text_div_four,NULL,window,&position);
-  
+
   position.x = (CP_WIDTH_RENDER+(CP_WIDTH_MENU/2)) - (text_div_five->w /2);
   position.y = space_between_div*4 + text_div_two->h + text_div_three->h+text_div_four->h ;
-  SDL_BlitSurface(text_div_five,NULL,window,&position);  
-  
+  SDL_BlitSurface(text_div_five,NULL,window,&position);
+
   position.x = (CP_WIDTH_RENDER+(CP_WIDTH_MENU/2)) - (text_div_six->w /2);
   position.y = space_between_div*5 + text_div_two->h + text_div_three->h+text_div_four->h+text_div_five->h ;
-  SDL_BlitSurface(text_div_six,NULL,window,&position); 
-   
+  SDL_BlitSurface(text_div_six,NULL,window,&position);
+
   position.x = (CP_WIDTH_RENDER+(CP_WIDTH_MENU/2)) - (text_div_seven->w /2);
   position.y = space_between_div*6 + text_div_two->h + text_div_three->h+text_div_four->h+text_div_five->h +text_div_six->h  ;
-  SDL_BlitSurface(text_div_seven,NULL,window,&position);  
+  SDL_BlitSurface(text_div_seven,NULL,window,&position);
 
 }
 
@@ -267,27 +267,24 @@ void export(SDL_Surface *window)
 	char command[1024] ="convert ";
 	char option[28]= " ";
 	export =  SDL_CreateRGBSurface(SDL_HWSURFACE,CP_WIDTH_RENDER,CP_HEIGHT_RENDER,32,0,0,0,0);
-	
+
 	p_screen.x = 0;
 	p_screen.y = 0;
 	p_screen.h = CP_HEIGHT_RENDER;
 	p_screen.w = CP_WIDTH_RENDER;
 	SDL_BlitSurface(window,&p_screen, export, NULL);
 
-  
+
 	strftime(buffer, sizeof(buffer), "%d-%m-%Y-%X", localtime(&t));
 	strcat(file_bmp,((const char*)buffer));
 	strcat(file_png,((const char*)buffer));
 	strcat(file_bmp,((const char*)extension_bmp));
 	strcat(file_png,((const char*)extension_png));
 	SDL_SaveBMP(export,file_bmp);
-	
+
 	strcat(command,((const char*)file_bmp));
 	strcat(command,((const char*)option));
 	strcat(command,((const char*)file_png));
 	system(command);
 	printf("Export enregistré ici : %s\n", file_png);
 }
-
-
-

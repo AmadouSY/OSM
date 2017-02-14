@@ -1,6 +1,7 @@
 /**
  * \file import_osm.c
  * \brief Importation de Fichier osm
+ * \author Fadyl Bello
  * \author Amadou SY
  * \version 1.0
  * \date 13 Mars 2016
@@ -18,7 +19,7 @@
  	* \param minlat La latitude maximal
  	* \param maxlon La longitude minimal
  	* \param maxla La latitude maximal
-	* \author Amadou SY
+	* \author Fadyl Bello
 	* \brief Obtient la requete en fonction des paramètres
   * \version 1.0
   * \date 13 Mars 2016

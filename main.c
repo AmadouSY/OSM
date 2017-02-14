@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	* si 2 arguments on le prend en compte
 	*/
 	if(argc == 1)
-		s = "test3.osm"; 
+		s = "files/test3.osm";
 	else
 	{
 		if (argc != 2)
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 			s = get_name(argv[1]);
 		}
 	}
-	
+
 	read_size_elmt(s);
 	lib_main(s);
 	tab_node_sort();

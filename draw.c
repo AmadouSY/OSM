@@ -215,7 +215,7 @@ void print_road_by_type(SDL_Surface *window, short x[], short y[], int taille, c
   	Color.b = 20;
   	size=2;
   }
-
+  
   if(type == TYPE_WAY_BUILDING_AREA)
   {
   	Color.r = 20;
@@ -309,7 +309,7 @@ void print_image_render(int type, int x, int y,SDL_Surface *window)
  * \param taille le nombre de point à placer
  * \param name le nom de l'élement(ex :Rue Pilkington)
  * \param type, le type d'élement à imprimer
- * \author Amadou SY et Fadyl Bello & Amadou Sy
+ * \author Fadyl Bello & Amadou Sy
  * \brief Affiche elements selon leur type
  * \version 1.0
  */
