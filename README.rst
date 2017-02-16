@@ -9,7 +9,6 @@ Utilisation
 -------
 
 Compilation
-
 .. code-block::
 	make
 
