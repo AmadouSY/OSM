@@ -3,12 +3,13 @@ Open Street Map Reader
 ========
 .. image:: https://github.com/AmadouSY/OSM/blob/master/export_render/rendu-13-03-2016-14_22_42.bmp
 
-Carte a partir de fichier .osm ou de coordonnées.
+Génère une carte a partir de fichier .osm ou de coordonnées.
 
 Utilisation 
 -------
 
 Compilation
+
 .. code-block::
 	make
 
